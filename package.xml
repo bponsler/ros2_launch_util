@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros2_launch_util</name>
+  <version>0.0.0</version>
+  <description>
+    Utility functions and classes for using the ROS 2 launch system.
+  </description>
+  <maintainer email="ponsler@gmail.com">Brett Ponsler</maintainer>
+  <license>Apache License 2.0</license>
+
+  <url type="tutorials">https://www.github.com/test_metadata_pkg/tutorials</url>
+  <url type="bugtracker">https://www.github.com/test_metadata_pkg/bug_tracker</url>
+  
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclpy</depend>
+   
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
