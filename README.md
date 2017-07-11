@@ -13,7 +13,7 @@ This module contains the following functions:
 - **xacro_to_urdf**(package_name, xacro_dir, xacro_file, urdf_file=None)
 - **add_robot_state_publisher_urdf**(ld, urdf_package, urdf_dir, urdf_file)
 - **add_robot_state_publisher_xacro**(ld, xacro_package, xacro_dir, xacro_file)
-
+- **create_args_list**(arg_map)
 
 Examples:
 
@@ -35,9 +35,15 @@ Examples:
         
         # Add a static transform publisher with an x offset
         add_static_transform_publisher(ld, "world", "map", x=1.0)
-        
+
+	# Create a list of arguments for a node
+	nodeArgs = create_args_list({
+	    "--my_int": 10,
+	    "--my_topic": "hello",
+	})
+
         # Easily launch the my_node node within the my_package package
-        add_node("my_package", "my_node", args=[])
+        add_node("my_package", "my_node", args=nodeArgs)
         
         # Find a file in the package's share directory:
         #     my_package/config/info.cfg

@@ -184,3 +184,20 @@ def add_robot_state_publisher_xacro(ld, xacro_package, xacro_dir, xacro_file):
 
     # Launch the robot state publisher with the desired URDF
     add_node(ld, "robot_state_publisher", "robot_state_publisher", [urdf])
+
+
+def create_args_list(arg_map):
+    """Create a list of arguments for a node from a map.
+
+    Create a list of arguments that can be passed to a node from a
+    dictionay of key, value argument pairs.
+
+    * arg_map -- the map of arguments
+
+    """
+    args = []
+    for key, value in arg_map.items():
+        args.append(str(key))
+        args.append(str(value))
+
+    return args
